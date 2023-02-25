@@ -11,6 +11,3 @@ def main():
         if now_level < aim_level:
             enhance.enhance(aim_level)
             break
-
-if __name__ == '__main__':
-    main()
