@@ -8,6 +8,7 @@ config.read('./config.ini')
 
 
 def enhance(aim_level):
+    step = 0
     now_level = compare_level.current_level()  
     enhance = config['enhance']['x'], config['enhance']['y']
     quick = config['quick']['x'], config['quick']['y']
@@ -18,5 +19,8 @@ def enhance(aim_level):
         pyautogui.click(realenhance)
         pyautogui.click(details)
         pyautogui.click(enhance)
-        time.sleep(0.2)
+        time.sleep(0.1)
+        step+=1
+        if step > 30 :
+            break
         now_level = compare_level.current_level()
